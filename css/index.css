@@ -5,26 +5,31 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
 }
 
 .container {
     display: flex;
+    flex-direction: row;
     align-items: center;
     background: white;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    max-width: 90%;
+    /* Ajuste para pantallas pequeñas */
 }
 
 .container img {
-    max-width: 200px;
-    margin-right: 2px;
+    max-width: 150px;
+    /* Reducido para pantallas más pequeñas */
+    margin-right: 20px;
     border-radius: 10px;
 }
 
 .text {
-    max-width: 300px;
-    padding-left: 20px;
+    max-width: 100%;
+    padding-left: 10px;
 }
 
 button {
@@ -35,6 +40,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -52,10 +58,13 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     text-align: center;
+    width: 90%;
+    /* Se adapta al tamaño del dispositivo */
 }
 
 .modal img {
-    max-width: 150px;
+    max-width: 100px;
+    /* Reducido para pantallas más pequeñas */
     margin-bottom: 10px;
 }
 
@@ -71,8 +80,40 @@ button:hover {
 
 .options {
     padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    /* Opciones en columna para móviles */
+    gap: 10px;
 }
 
-/* #next-button {
-    display: none;
-} */
+/* Estilos específicos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        /* Elementos apilados en lugar de en fila */
+        text-align: center;
+        /* Centrar texto e imagen */
+    }
+
+    .container img {
+        margin: 0 0 20px 0;
+        /* Espaciado inferior para la imagen */
+    }
+
+    .text {
+        padding-left: 0;
+        /* Eliminar margen izquierdo */
+    }
+
+    button {
+        font-size: 14px;
+        /* Botones ligeramente más pequeños */
+        padding: 8px 16px;
+        /* Ajustar tamaño del botón */
+    }
+
+    .modal img {
+        max-width: 80px;
+        /* Imagen del modal más pequeña */
+    }
+}
